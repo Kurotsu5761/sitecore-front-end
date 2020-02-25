@@ -1,0 +1,31 @@
+.login {
+  padding: 0 15%;
+  margin-bottom: 150px;
+}
+
+.form {
+  width: 600px;
+  padding: 40px 0px;
+  border-radius: 10px;
+  background-color: royalblue;
+  margin: auto;
+  text-align: center;
+}
+
+.login-logo {
+  width: auto;
+  height: auto;
+  margin-top: 20px;
+  margin: auto;
+}
+
+.form > label {
+  font-size: 25px;
+  color: white;
+}
+.form > input[type="text"] {
+  font-size: 20px;
+  margin-top: 10px;
+  width: 400px;
+  padding: 4px;
+}

@@ -1,0 +1,40 @@
+.bookCard {
+  background-color: royalblue;
+  width: 100%;
+  min-height: 400px;
+  padding: 5px;
+}
+
+.image {
+  height: auto;
+  width: auto;
+  max-height: 40rem;
+  max-width: 95%;
+  margin: auto;
+  margin-top: 5px;
+  display: block;
+}
+
+h4,
+h3 {
+  color: white;
+}
+
+.buttonContainer {
+  text-align: center;
+}
+.button {
+  margin: 10px;
+  border: none;
+  font-size: 1.2rem;
+  background-color: white;
+  padding: 5px 15px;
+  color: royalblue;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px #888888;
+  cursor: pointer;
+}
+.content {
+  margin-left: 20px;
+  margin-right: 20px;
+}

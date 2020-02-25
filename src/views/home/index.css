@@ -1,0 +1,33 @@
+.home {
+  padding: 0 15%;
+  margin-bottom: 150px;
+}
+.home-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-select {
+  width: 200px;
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (min-width: 920px) {
+  .grid {
+    grid-template-columns: repeat(4, auto);
+  }
+}
