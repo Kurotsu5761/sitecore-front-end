@@ -50,7 +50,7 @@ function Analytics() {
     let data = await analyticSvc.getAnalytics({
       userToken: user?.token,
       type: 0,
-      filter: selectedUser == 0 ? 3 : 1,
+      filter: selectedUser === 0 ? 3 : 1,
       id: selectedUser
     });
     setCategoriesData(analyticSvc.transform(0, data));
@@ -70,7 +70,9 @@ function Analytics() {
           }}
         >
           {users.map(_ => (
-            <option value={_.userId}>{_.emailAddress}</option>
+            <option value={_.userId} key={_.userId}>
+              {_.emailAddress}
+            </option>
           ))}
         </select>
       </div>

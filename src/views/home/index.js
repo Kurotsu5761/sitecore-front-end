@@ -17,7 +17,6 @@ function Home() {
       page: 1,
       pageSize: 10000
     });
-    console.log("Fetch data", books);
     if (books) {
       if (books.total === 0) {
         setBooks([]);

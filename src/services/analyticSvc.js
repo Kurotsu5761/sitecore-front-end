@@ -41,7 +41,7 @@ let transformCategories = data => {
   let categories = [...new Set(data.map(_ => _.categoryName))];
   let mapped = categories.map(_ => ({
     label: _,
-    angle: data.filter(x => x.categoryName == _).length
+    angle: data.filter(x => x.categoryName === _).length
   }));
   return mapped;
 };
