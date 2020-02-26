@@ -17,6 +17,7 @@ function Header() {
         />
       </Link>
       <h1 className="header-text">Library App</h1>
+
       <div
         className="burger"
         onClick={() => {
@@ -27,7 +28,9 @@ function Header() {
         <div />
         <div />
       </div>
+
       {user ? UserLoggedIn({ user, setUser }) : UserLoggedOut()}
+
       {viewDropDown &&
         (user
           ? UserLoggedInDropDown({ user, setUser })

@@ -9,15 +9,19 @@ import CanvasJSReact from "../../modules/canvasjs-2.3.2/canvasjs.react";
 import "./index.css";
 
 function Analytics() {
+  //Declaration
   const { user } = useContext(UserContext);
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(0);
   const [categoriesData, setCategoriesData] = useState([]);
   const [rentalBreakdown, setRentalBreakdown] = useState([]);
-  const librarySvc = new LibrarySvc();
-  const analyticSvc = new AnalyticSvc();
+
   let CanvasJS = CanvasJSReact.CanvasJS;
   let CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+  //Instantiate library
+  const librarySvc = new LibrarySvc();
+  const analyticSvc = new AnalyticSvc();
 
   let barChartOption = {
     animatedEnabled: false,
@@ -86,7 +90,4 @@ function Analytics() {
   );
 }
 
-function AnalyticDashboar() {
-  return <RadialChart></RadialChart>;
-}
 export default Analytics;

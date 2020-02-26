@@ -36,6 +36,7 @@ class AnalyticSvc {
   };
 }
 
+//Transform into PieChart data
 let transformCategories = data => {
   let categories = [...new Set(data.map(_ => _.categoryName))];
   let mapped = categories.map(_ => ({
@@ -45,6 +46,7 @@ let transformCategories = data => {
   return mapped;
 };
 
+//Transform into BarChart data, taking last 7 days of data
 let transformDate = data => {
   //array[{x:, y: }]
   let days = [
@@ -55,7 +57,7 @@ let transformDate = data => {
     )
   ]
     .sort((a, b) => new Date(a) - new Date(b))
-    .slice(-5);
+    .slice(-7);
   let mapped = days.map(_ => ({
     x: new Date(_),
     y: data.filter(

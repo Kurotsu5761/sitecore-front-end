@@ -35,7 +35,8 @@ function App() {
           <Route path="/login" component={Login} exact />
           <Route path="/analytics" component={Analytics} exact />
           <Route path="/user" component={User} exact />
-          <Redirect from="*" to="/" />
+          <Redirect from="*" to="/" />{" "}
+          {/* Redirect back to Home if other route is provided */}
         </Switch>
         <Footer></Footer>
       </UserContext.Provider>
