@@ -4,8 +4,6 @@ import { UserContext } from "../../../utils/userContext";
 
 function BookCard({ item, returnBook, rentBook }) {
   const { user } = useContext(UserContext);
-
-  console.log(item);
   return (
     <div className="bookCard">
       <img src={item.imageUrl} className="image" alt="bookImage" />
@@ -15,7 +13,7 @@ function BookCard({ item, returnBook, rentBook }) {
         <h4>Category: {item.category.name}</h4>
         <h4>Author: {item.authors.map(x => x.name).join(", ")}</h4>
         <div className="buttonContainer">
-          {item.bookStatus == "Available" && user && (
+          {item.bookStatus === "Available" && user && (
             <button
               className="button"
               type="button"
@@ -24,7 +22,7 @@ function BookCard({ item, returnBook, rentBook }) {
               Rent
             </button>
           )}
-          {item.currentUser.userId == user?.userId && (
+          {item.currentUser.userId === user?.userId && (
             <button
               className="button"
               type="button"

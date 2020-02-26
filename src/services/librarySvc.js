@@ -34,10 +34,21 @@ class LibrarySvc {
       }
     });
   };
+  getAuthors = async ({ userToken }) => {
+    let url = libraryUrl + "/authors";
+    return await get(url, userToken);
+  };
+  getCategories = async ({ userToken }) => {
+    let url = libraryUrl + "/categories";
+    return await get(url, userToken);
+  };
+  getUsers = async ({ userToken }) => {
+    let url = libraryUrl + "/users";
+    return await get(url, userToken);
+  };
 }
 
 const get = async (url, userToken) => {
-  console.log(userToken);
   return await fetch(url, {
     method: "GET",
     headers: {

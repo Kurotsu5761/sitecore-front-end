@@ -18,20 +18,27 @@ class UserSvc {
       .catch(error => console.log(error));
   };
 
-  history = async () => {
+  getHistory = async ({ userToken }) => {
     const url = API.baseUrl + "/me/history";
-    return get(url);
+    return get(url, userToken);
   };
 
-  books = async () => {
+  getBooks = async ({ userToken }) => {
     const url = API.baseUrl + "/me/books";
-    return get(url);
+    return get(url, userToken);
   };
 }
 
-const get = async url => {
-  return await fetch(url)
-    .then(response => response.json())
+const get = async (url, userToken) => {
+  return await fetch(url, {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer " + userToken
+    }
+  })
+    .then(response => {
+      return response.json();
+    })
     .catch(error => console.log(error));
 };
 

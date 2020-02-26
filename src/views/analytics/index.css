@@ -1,0 +1,23 @@
+.analytic {
+  padding: 0 15%;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.analytic h1 {
+  width: 100%;
+}
+
+.analytic-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.analytic-select {
+  width: 100%;
+  font-size: 20px;
+}

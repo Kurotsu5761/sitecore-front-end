@@ -6,13 +6,9 @@ import LibraryService from "../../services/librarySvc";
 
 function Home() {
   let librarySvc = new LibraryService();
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [books, setBooks] = useState([]);
   const [filter, setFilter] = useState(0);
-
-  useEffect(() => {
-    fetchData();
-  }, [filter]);
 
   let fetchData = async () => {
     var books = await librarySvc.getBooks({
@@ -21,15 +17,19 @@ function Home() {
       page: 1,
       pageSize: 10000
     });
-    console.log(books);
+    console.log("Fetch data", books);
     if (books) {
-      if (books.total == 0) {
+      if (books.total === 0) {
         setBooks([]);
       } else {
         setBooks(books.books);
       }
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, [filter]);
 
   let returnBook = async bookId => {
     await librarySvc.return({ userToken: user?.token, bookId });
@@ -57,7 +57,7 @@ function Home() {
         </select>
       </div>
 
-      {books.length == 0 ? (
+      {books.length === 0 ? (
         <h2>No Books Available</h2>
       ) : (
         <div className="grid">

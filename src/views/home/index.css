@@ -16,18 +16,18 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
 @media (min-width: 700px) {
   .grid {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 920px) {
   .grid {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
   }
 }

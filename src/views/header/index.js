@@ -5,9 +5,8 @@ import { UserContext } from "./../../utils/userContext";
 
 function Header() {
   const { user, setUser } = useContext(UserContext);
-  const [viewDropDown, setDropDown] = useState(true);
+  const [viewDropDown, setDropDown] = useState(false);
 
-  console.log(viewDropDown);
   return (
     <header className="header">
       <Link to="/">
@@ -21,7 +20,6 @@ function Header() {
       <div
         className="burger"
         onClick={() => {
-          console.log("called");
           setDropDown(!viewDropDown);
         }}
       >

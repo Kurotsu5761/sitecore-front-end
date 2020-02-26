@@ -1,0 +1,39 @@
+.nav-tabs > .active {
+  background-color: #f2f2f2;
+}
+.nav-item {
+  padding: 10px 20px;
+  font-size: 16pt;
+  margin: 0px !important;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid grey;
+}
+
+.p-datatable-row > td > .p-column-title {
+  display: none;
+}
+
+.p-datatable-wrapper > table {
+  width: 100%;
+}
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid black;
+  padding: 0px 10px;
+}
+
+th {
+  background-color: royalblue;
+  color: white;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
