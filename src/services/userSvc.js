@@ -36,9 +36,7 @@ const get = async (url, userToken) => {
       Authorization: "Bearer " + userToken
     }
   })
-    .then(response => {
-      return response.json();
-    })
+    .then(response => response.json())
     .catch(error => console.log(error));
 };
 

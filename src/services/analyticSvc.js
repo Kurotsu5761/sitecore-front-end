@@ -38,7 +38,10 @@ class AnalyticSvc {
 
 //Transform into PieChart data
 let transformCategories = data => {
+  //Get unique categories from the data
   let categories = [...new Set(data.map(_ => _.categoryName))];
+
+  //Count the data and put it into [{label: , angel: }] format for piechart
   let mapped = categories.map(_ => ({
     label: _,
     angle: data.filter(x => x.categoryName === _).length
@@ -46,9 +49,9 @@ let transformCategories = data => {
   return mapped;
 };
 
-//Transform into BarChart data, taking last 7 days of data
+//Transform into BarChart data
 let transformDate = data => {
-  //array[{x:, y: }]
+  //Get Unique last 7 days from data
   let days = [
     ...new Set(
       data.map(_ =>
@@ -58,14 +61,16 @@ let transformDate = data => {
   ]
     .sort((a, b) => new Date(a) - new Date(b))
     .slice(-7);
-  let mapped = days.map(_ => ({
-    x: new Date(_),
+
+  //Map it into [{x: Dates, y: Count}]
+  let mapped = days.map(date => ({
+    x: new Date(date),
     y: data.filter(
-      x =>
-        new Date(x.dateRented).toLocaleDateString(
+      _ =>
+        new Date(_.dateRented).toLocaleDateString(
           undefined,
           dateFormatOption
-        ) === _
+        ) === date
     ).length
   }));
   return mapped;

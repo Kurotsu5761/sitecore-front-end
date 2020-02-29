@@ -25,6 +25,7 @@ class LibrarySvc {
       }
     });
   };
+
   return = async ({ userToken, bookId }) => {
     let url = libraryUrl + "/return?bookId=" + bookId;
     await fetch(url, {
@@ -34,14 +35,17 @@ class LibrarySvc {
       }
     });
   };
+
   getAuthors = async ({ userToken }) => {
     let url = libraryUrl + "/authors";
     return await get(url, userToken);
   };
+
   getCategories = async ({ userToken }) => {
     let url = libraryUrl + "/categories";
     return await get(url, userToken);
   };
+
   getUsers = async ({ userToken }) => {
     let url = libraryUrl + "/users";
     return await get(url, userToken);
